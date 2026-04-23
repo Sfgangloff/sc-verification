@@ -1,0 +1,18 @@
+# echidna.yaml
+
+# 1. Target and Compiler
+contract: VaultFuzz
+cryticArgs: ["--solc-remaps", "@openzeppelin/=node_modules/@openzeppelin/"]
+
+# 2. Financial Pre-conditions (Massive funding)
+balanceContract: 100000000000000000000  # 100 ETH
+balanceAddr: 100000000000000000000      # 100 ETH
+
+# 3. Gas and Deployment Limits
+# Increasing these prevents the "out-of-gas" or "revert" during setup
+deployer: "0x30000"
+gasLimit: 100000000      # 100M Gas (standard is 8M-12M)
+
+# 4. Testing Parameters
+testLimit: 50000
+seqLen: 100
